@@ -27,13 +27,14 @@
 
 	&__content {
 		max-width: 480px;
-		background: rgba(255, 255, 255, 0.67);
+		background: rgba(255, 255, 255, 0.8);
 		border-radius: 20px;
 		padding: 30px 70px;
 		color: #333333;
 
 		@media (max-width:$mobile) {
 			padding: 20px;
+			background: rgba(255, 255, 255, 1);
 		}
 	}
 
