@@ -1,3 +1,92 @@
 //====================================================================================================
+.main {
+	position: relative;
+
+	&__row {
+		display: flex;
+		align-items: center;
+		z-index: 2;
+	}
+
+	&__title {
+		@include adaptiveValue("margin-top", 125, 30);
+		max-width: 600px;
+		font-family: 'Futura Bold';
+		font-weight: 700;
+		@include adaptiveValue("font-size", 50, 30);
+		line-height: math.div(60, 50);
+		@include adaptiveValue("margin-bottom", 60, 30);
+		position: relative;
+		z-index: 2;
+
+		span {
+			color: #00609D;
+		}
+	}
+
+	&__subtitle {
+		font-weight: 700;
+		line-height: math.div(18, 15);
+		margin-bottom: 25px;
+		position: relative;
+		z-index: 2;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 560px;
+		flex-wrap: wrap;
+	}
+
+	&__items-card {
+		width: 40%;
+		display: flex;
+		margin-bottom: 26px;
+		position: relative;
+		z-index: 2;
+
+		@media (max-width:$tablet) {
+			width: 100%;
+		}
+	}
+
+	&__img {
+		position: absolute;
+		top: 0;
+		right: 0;
+
+		@media (max-width:$mobile) {
+			opacity: 0.3;
+		}
+	}
+}
+
+.card {
+	display: flex;
+	align-items: center;
+
+	&__items {
+		display: flex;
+		align-items: center;
+	}
+
+	&__items-img {
+		width: 60px;
+		height: 60px;
+		margin-right: 15px;
+
+		img {
+			width: 100%;
+		}
+	}
+
+	&__items-text {
+		font-weight: 400;
+		line-height: math.div(18, 15);
+		color: #000000;
+	}
+}
 
 //====================================================================================================

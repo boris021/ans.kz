@@ -1,17 +1,33 @@
 @charset "UTF-8";
 
 @font-face {
-  font-family: Futura Md BT Bold;
+  font-family: "Futura Bold";
   font-display: swap;
-  src: url("../fonts/Futura Md BT Bold.woff2") format("woff2"), url("../fonts/Futura Md BT Bold.woff") format("woff");
+  src: url("../fonts/Futura Bold.woff2") format("woff2"), url("../fonts/Futura Bold.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: Futura Md BT Bold Italic;
+  font-family: "Futura Bold Italic";
   font-display: swap;
-  src: url("../fonts/Futura Md BT Bold Italic.woff2") format("woff2"), url("../fonts/Futura Md BT Bold Italic.woff") format("woff");
+  src: url("../fonts/Futura Bold Italic.woff2") format("woff2"), url("../fonts/Futura Bold Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura Medium Italic";
+  font-display: swap;
+  src: url("../fonts/Futura Medium Italic.woff2") format("woff2"), url("../fonts/Futura Medium Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura Medium";
+  font-display: swap;
+  src: url("../fonts/Futura Medium.woff2") format("woff2"), url("../fonts/Futura Medium.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -20,22 +36,6 @@
   font-family: icons;
   font-display: swap;
   src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Futura Md BT Medium;
-  font-display: swap;
-  src: url("../fonts/Futura Md BT Medium.woff2") format("woff2"), url("../fonts/Futura Md BT Medium.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Futura Md BT Medium Italic;
-  font-display: swap;
-  src: url("../fonts/Futura Md BT Medium Italic.woff2") format("woff2"), url("../fonts/Futura Md BT Medium Italic.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -175,7 +175,7 @@ body {
 }
 
 body {
-  color: #000;
+  color: #333;
   line-height: 1;
   font-family: "Futura Medium";
   font-size: 0.9375rem;
@@ -427,7 +427,6 @@ body::after {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.1875;
-  color: #333333;
 }
 
 .header__phone::before {
@@ -468,7 +467,6 @@ body::after {
   font-family: "Futura Md BT";
   font-weight: 400;
   line-height: 1.2;
-  color: #333333;
   -webkit-transition: opacity 0.3s ease 0s;
   -o-transition: opacity 0.3s ease 0s;
   transition: opacity 0.3s ease 0s;
@@ -483,6 +481,7 @@ body::after {
 }
 
 .footer {
+  margin-top: 40px;
   position: relative;
   min-height: 415px;
   display: -webkit-box;
@@ -618,6 +617,142 @@ body::after {
   margin-right: 0;
 }
 
+.main {
+  position: relative;
+}
+
+.main__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+}
+
+.main__title {
+  max-width: 600px;
+  font-family: "Futura Bold";
+  font-weight: 700;
+  line-height: 1.2;
+  position: relative;
+  z-index: 2;
+}
+
+@supports (margin-top: clamp( 1.875rem , 0.1785714286rem  +  8.4821428571vw , 7.8125rem )) {
+  .main__title {
+    margin-top: clamp( 1.875rem , 0.1785714286rem  +  8.4821428571vw , 7.8125rem );
+  }
+}
+
+@supports not (margin-top: clamp( 1.875rem , 0.1785714286rem  +  8.4821428571vw , 7.8125rem )) {
+  .main__title {
+    margin-top: calc(1.875rem + 5.9375 * (100vw - 20rem) / 70);
+  }
+}
+
+@supports (font-size: clamp( 1.875rem , 1.5178571429rem  +  1.7857142857vw , 3.125rem )) {
+  .main__title {
+    font-size: clamp( 1.875rem , 1.5178571429rem  +  1.7857142857vw , 3.125rem );
+  }
+}
+
+@supports not (font-size: clamp( 1.875rem , 1.5178571429rem  +  1.7857142857vw , 3.125rem )) {
+  .main__title {
+    font-size: calc(1.875rem + 1.25 * (100vw - 20rem) / 70);
+  }
+}
+
+@supports (margin-bottom: clamp( 1.875rem , 1.3392857143rem  +  2.6785714286vw , 3.75rem )) {
+  .main__title {
+    margin-bottom: clamp( 1.875rem , 1.3392857143rem  +  2.6785714286vw , 3.75rem );
+  }
+}
+
+@supports not (margin-bottom: clamp( 1.875rem , 1.3392857143rem  +  2.6785714286vw , 3.75rem )) {
+  .main__title {
+    margin-bottom: calc(1.875rem + 1.875 * (100vw - 20rem) / 70);
+  }
+}
+
+.main__title span {
+  color: #00609D;
+}
+
+.main__subtitle {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.main__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 560px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.main__items-card {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 26px;
+  position: relative;
+  z-index: 2;
+}
+
+.main__img {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card__items-img {
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+}
+
+.card__items-img img {
+  width: 100%;
+}
+
+.card__items-text {
+  font-weight: 400;
+  line-height: 1.2;
+  color: #000000;
+}
+
 .swiper {
   overflow: hidden;
 }
@@ -721,6 +856,10 @@ body::after {
   .menu__item:last-child {
     margin-bottom: 0;
   }
+
+  .main__items-card {
+    width: 100%;
+  }
 }
 
 @media (max-width: 47.99875em) {
@@ -787,5 +926,9 @@ body::after {
   .footer__content {
     padding: 20px;
     background: rgb(255, 255, 255);
+  }
+
+  .main__img {
+    opacity: 0.3;
   }
 }

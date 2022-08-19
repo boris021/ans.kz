@@ -42,7 +42,6 @@
 		font-weight: 700;
 		font-size: 16px;
 		line-height: math.div(19, 16);
-		color: #333333;
 
 		&::before {
 			display: inline-flex;
@@ -52,7 +51,6 @@
 		}
 
 		@media (max-width:$mobile) {
-			// display: none;
 			display: block;
 			text-align: center;
 			margin-top: 20px;
@@ -126,7 +124,6 @@
 		font-family: 'Futura Md BT';
 		font-weight: 400;
 		line-height: math.div(18, 15);
-		color: #333333;
 		transition: opacity 0.3s ease 0s;
 
 		&:hover {
