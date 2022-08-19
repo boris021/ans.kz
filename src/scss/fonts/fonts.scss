@@ -1,7 +1,35 @@
 @font-face {
+	font-family: Futura Md BT Bold;
+	font-display: swap;
+	src: url("../fonts/Futura Md BT Bold.woff2") format("woff2"), url("../fonts/Futura Md BT Bold.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: Futura Md BT Bold Italic;
+	font-display: swap;
+	src: url("../fonts/Futura Md BT Bold Italic.woff2") format("woff2"), url("../fonts/Futura Md BT Bold Italic.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
 	font-family: icons;
 	font-display: swap;
 	src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: Futura Md BT Medium;
+	font-display: swap;
+	src: url("../fonts/Futura Md BT Medium.woff2") format("woff2"), url("../fonts/Futura Md BT Medium.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: Futura Md BT Medium Italic;
+	font-display: swap;
+	src: url("../fonts/Futura Md BT Medium Italic.woff2") format("woff2"), url("../fonts/Futura Md BT Medium Italic.woff") format("woff");
 	font-weight: 400;
 	font-style: normal;
 }
