@@ -377,6 +377,7 @@
 
 		@media (max-width:$mobile) {
 			margin-bottom: 100px;
+			margin-right: 0;
 		}
 
 		&:last-child {
@@ -696,13 +697,14 @@
 		margin-top: -10px;
 		font-family: 'Futura Bold';
 		font-weight: 700;
-		@include adaptiveValue("font-size", 50, 35);
+		@include adaptiveValue("font-size", 50, 45);
 		color: #FFDD1C;
 		text-transform: uppercase;
 		position: relative;
 
 		@media (max-width: em(1285)) {
 			margin-top: 20px;
+			margin-bottom: 10px;
 		}
 	}
 

@@ -1,16 +1,23 @@
 <header class="header">
 	<div class="header__container">
 		<div class="header__row">
-			<a href="#home" class="header__logo"><img src="@img/logo.png" alt="logo"></a>
+			<a data-goto=".main" href="#" class="header__logo"><img src="@img/logo.png" alt="logo"></a>
 			<div class="header__menu menu">
 				<button type="button" class="menu__icon icon-menu"><span></span></button>
 				<nav class="menu__body">
 					<ul class="menu__list">
-						<li class="menu__item"><a href="" class="menu__link">О нас</a></li>
-						<li class="menu__item"><a href="" class="menu__link">Услуги</a></li>
-						<li class="menu__item"><a href="" class="menu__link">Преимущества</a></li>
-						<li class="menu__item"><a href="" class="menu__link">Отзывы</a></li>
-						<li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
+						<li class="menu__item"><a data-goto-top="70" data-goto=".about" href="" class="menu__link">О нас</a>
+						</li>
+						<li class="menu__item"><a data-goto-top="30" data-goto=".service" href=""
+								class="menu__link">Услуги</a>
+						</li>
+						<li class="menu__item"><a data-goto-top="30" data-goto=".reason" href=""
+								class="menu__link">Преимущества</a></li>
+						<li class="menu__item"><a data-goto-top="30" data-goto=".feedback" href=""
+								class="menu__link">Отзывы</a>
+						</li>
+						<li class="menu__item"><a data-goto=".footer" href="" class="menu__link">Контакты</a>
+						</li>
 					</ul>
 				</nav>
 			</div>

@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20220822154000">
+	<link rel="stylesheet" href="css/style.min.css?_v=20220822160037">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,16 +17,20 @@
 		<header class="header">
 			<div class="header__container">
 				<div class="header__row">
-					<a href="#home" class="header__logo"><img src="img/logo.png" alt="logo"></a>
+					<a data-goto=".main" href="#" class="header__logo"><img src="img/logo.png" alt="logo"></a>
 					<div class="header__menu menu">
 						<button type="button" class="menu__icon icon-menu"><span></span></button>
 						<nav class="menu__body">
 							<ul class="menu__list">
-								<li class="menu__item"><a href="" class="menu__link">О нас</a></li>
-								<li class="menu__item"><a href="" class="menu__link">Услуги</a></li>
-								<li class="menu__item"><a href="" class="menu__link">Преимущества</a></li>
-								<li class="menu__item"><a href="" class="menu__link">Отзывы</a></li>
-								<li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
+								<li class="menu__item"><a data-goto-top="70" data-goto=".about" href="" class="menu__link">О нас</a>
+								</li>
+								<li class="menu__item"><a data-goto-top="30" data-goto=".service" href="" class="menu__link">Услуги</a>
+								</li>
+								<li class="menu__item"><a data-goto-top="30" data-goto=".reason" href="" class="menu__link">Преимущества</a></li>
+								<li class="menu__item"><a data-goto-top="30" data-goto=".feedback" href="" class="menu__link">Отзывы</a>
+								</li>
+								<li class="menu__item"><a data-goto=".footer" href="" class="menu__link">Контакты</a>
+								</li>
 							</ul>
 						</nav>
 					</div>
@@ -62,7 +66,8 @@
 									<div class="card__items-text">Ответственность за результат</div>
 								</div>
 							</div>
-							<a href="#" class="main__left-btn btn-blue">Оставить заявку</a>
+							<a href="https://api.whatsapp.com/send?phone=77272547640" class="main__left-btn btn-blue">Оставить
+								заявку</a>
 						</div>
 						<div class="main__right"></div>
 					</div>
@@ -195,16 +200,16 @@
 						<div class="claim__forms">
 							<div class="claim__forms-title">Заполните короткую форму</div>
 							<div class="claim__forms-subtitle">чтобы мы связались с вами в любое удобное для вас время</div>
-							<form action="">
+							<form data-ajax="true" action="sendmail.php" method="POST">
 								<div class="claim__forms-group">
-									<label class="claim__forms-label" name="name"> Имя </label>
-									<input autocomplete="on" type="text" name="name" data-error="Ошибка" placeholder="" class="input claim__forms-name">
+									<label class="claim__forms-label"> Имя </label>
+									<input autocomplete="on" type="text" name="name" data-error="Вы не ввели ваше имя" class="input claim__forms-name" data-required="text">
 								</div>
 								<div class="claim__forms-group">
 									<label class="claim__forms-label"> Телефон </label>
-									<input autocomplete="off" type="tel" name="tel" data-error="Ошибка" placeholder="" class="input claim__forms-tel">
+									<input autocomplete="off" type="tel" name="tel" data-error="Вы не ввели номер телефона" class="input claim__forms-tel tel" data-required="tel">
 								</div>
-								<button type="button" class="claim__forms-btn">Оставить заявку</button>
+								<button type="submit" class="claim__forms-btn">Оставить заявку</button>
 							</form>
 						</div>
 
@@ -309,10 +314,10 @@
 						</div>
 						<a href="mailto:alhtoo@mail.ru" class="footer__content-mail _icon-mail">E-mail: alhtoo@mail.ru</a>
 						<div class="footer__content-social">
-							<a href="" class="footer__content-social-link">
+							<a href="tel:+77272547640" class="footer__content-social-link">
 								<img src="img/telephone.svg" alt="">
 							</a>
-							<a href="" class="footer__content-social-link">
+							<a href="https://api.whatsapp.com/send?phone=77272547640" class="footer__content-social-link">
 								<img src="img/whatsapp.svg" alt="">
 							</a>
 						</div>
@@ -337,7 +342,47 @@
 </div>
  -->
 
-	<script src="js/app.min.js?_v=20220822154000"></script>
+	<script src="js/app.min.js?_v=20220822160037"></script>
+	<script>
+		window.addEventListener("DOMContentLoaded", function() {
+			[].forEach.call(document.querySelectorAll('.tel'), function(input) {
+				var keyCode;
+
+				function mask(event) {
+					event.keyCode && (keyCode = event.keyCode);
+					var pos = this.selectionStart;
+					if (pos < 3) event.preventDefault();
+					var matrix = "+7 (___) ___ ____",
+						i = 0,
+						def = matrix.replace(/\D/g, ""),
+						val = this.value.replace(/\D/g, ""),
+						new_value = matrix.replace(/[_\d]/g, function(a) {
+							return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+						});
+					i = new_value.indexOf("_");
+					if (i != -1) {
+						i < 5 && (i = 3);
+						new_value = new_value.slice(0, i)
+					}
+					var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+						function(a) {
+							return "\\d{1," + a.length + "}"
+						}).replace(/[+()]/g, "\\$&");
+					reg = new RegExp("^" + reg + "$");
+					if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value =
+						new_value;
+					if (event.type == "blur" && this.value.length < 5) this.value = ""
+				}
+
+				input.addEventListener("input", mask, false);
+				input.addEventListener("focus", mask, false);
+				input.addEventListener("blur", mask, false);
+				input.addEventListener("keydown", mask, false)
+
+			});
+
+		});
+	</script>
 </body>
 
 </html>

@@ -34,7 +34,8 @@
 									<div class="card__items-text">Ответственность за результат</div>
 								</div>
 							</div>
-							<a href="#" class="main__left-btn btn-blue">Оставить заявку</a>
+							<a href="https://api.whatsapp.com/send?phone=77272547640" class="main__left-btn btn-blue">Оставить
+								заявку</a>
 						</div>
 						<div class="main__right"></div>
 					</div>
@@ -167,18 +168,18 @@
 						<div class="claim__forms">
 							<div class="claim__forms-title">Заполните короткую форму</div>
 							<div class="claim__forms-subtitle">чтобы мы связались с вами в любое удобное для вас время</div>
-							<form action="">
+							<form data-ajax="true" action="sendmail.php" method="POST">
 								<div class="claim__forms-group">
-									<label class="claim__forms-label" name="name"> Имя </label>
-									<input autocomplete="on" type="text" name="name" data-error="Ошибка" placeholder=""
-										class="input claim__forms-name">
+									<label class="claim__forms-label"> Имя </label>
+									<input autocomplete="on" type="text" name="name" data-error="Вы не ввели ваше имя"
+										class="input claim__forms-name" data-required="text">
 								</div>
 								<div class="claim__forms-group">
 									<label class="claim__forms-label"> Телефон </label>
-									<input autocomplete="off" type="tel" name="tel" data-error="Ошибка" placeholder=""
-										class="input claim__forms-tel">
+									<input autocomplete="off" type="tel" name="tel" data-error="Вы не ввели номер телефона"
+										class="input claim__forms-tel tel" data-required="tel">
 								</div>
-								<button type="button" class="claim__forms-btn">Оставить заявку</button>
+								<button type="submit" class="claim__forms-btn">Оставить заявку</button>
 							</form>
 						</div>
 
