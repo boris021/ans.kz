@@ -57,7 +57,7 @@
 		top: 0;
 		right: 0;
 
-		@media (max-width:$mobile) {
+		@media (max-width:$tablet) {
 			opacity: 0.3;
 		}
 	}
@@ -180,7 +180,7 @@
 
 	&__left {
 		max-width: 652px;
-		transform: translate(50%, 45%);
+		transform: translate(50%, 33%);
 		background: linear-gradient(111.5deg, rgba(255, 221, 28, 0.82) 1.8%, rgba(255, 255, 255, 0.4346) 100%);
 		box-shadow: 0px 36px 47px -18px rgba(0, 0, 0, 0.25), inset 0px 4px 30px rgba(255, 255, 255, 0.54);
 		backdrop-filter: blur(46px);
@@ -191,8 +191,7 @@
 		@media (max-width: em(1337)) {
 			transform: translate(0, 0);
 			margin: 40px 0;
-			padding: 15px;
-			width: 95%;
+			// padding: 15px;
 		}
 	}
 
@@ -201,7 +200,11 @@
 		z-index: 2;
 
 		@media (max-width: em(1337)) {
-			width: 95%;
+			width: 100%;
+
+			@media (max-width:$mobile) {
+				margin-bottom: 40px;
+			}
 		}
 	}
 }
@@ -214,6 +217,11 @@
 		backdrop-filter: blur(46px);
 		border-radius: 10px;
 		padding: 28px;
+		margin-top: -50px;
+
+		@media (max-width:$tablet) {
+			margin-top: 0;
+		}
 	}
 
 	&__right-text {
@@ -228,7 +236,7 @@
 			margin-bottom: 132px;
 
 			@media (max-width:$tablet) {
-				margin-bottom: 28px;
+				margin-bottom: 0px;
 			}
 		}
 	}
@@ -283,5 +291,156 @@
 		font-weight: 700;
 		font-size: rem(16);
 		line-height: math.div(20, 16);
+	}
+}
+
+// service ========================================================================================================================================================
+.service {
+	position: relative;
+	@include adaptiveValue("margin-top", 300, 100);
+	@include adaptiveValue("margin-bottom", 120, 40);
+
+	&:after {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: url(../img/service/service-bg.png) top left no-repeat;
+		z-index: -1;
+
+		@media (max-width:$mobile) {
+			opacity: 0.2;
+		}
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		bottom: 0;
+		right: 0;
+		background: url(../img/service/service-img.png) bottom right no-repeat;
+		z-index: -1;
+
+		@media (max-width:$mobile) {
+			opacity: 0.2;
+		}
+	}
+
+
+	&__title {
+		font-family: 'Futura Md BT';
+		font-weight: 700;
+		font-size: 30px;
+		line-height: math.div(36, 30);
+		color: #333333;
+		margin-bottom: 20px;
+
+		span {
+			color: rgba(0, 96, 157, 1);
+		}
+	}
+
+	&__subtitle {
+		font-family: 'Futura Md BT';
+		font-weight: 400;
+		line-height: math.div(18, 15);
+		color: #000000;
+		margin-bottom: 20px;
+		max-width: 842px;
+	}
+
+	&__row {
+		margin-top: 120px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+
+	}
+
+	&__card {
+		position: relative;
+		width: 300px;
+		height: 300px;
+		border-radius: 50%;
+		background: linear-gradient(139.53deg, #FFDD1C 12.44%, rgba(255, 221, 28, 0) 91.69%);
+		filter: drop-shadow(0px 30px 47px rgba(0, 0, 0, 0.25));
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		margin-right: 50px;
+		margin-bottom: 120px;
+
+		@media (max-width:$mobile) {
+			margin-bottom: 100px;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		&-img {
+			position: absolute;
+			width: auto;
+			height: auto;
+			top: 0;
+			right: 0;
+
+			&-itm1 {
+				top: -90px;
+				right: 25px;
+			}
+
+			&-itm2 {
+				top: -75px;
+				right: 20px;
+			}
+
+			&-itm3 {
+				top: -68px;
+				right: 50px;
+			}
+
+			&-itm4 {
+				top: -93px;
+				right: 60px;
+			}
+
+			&-itm5 {
+				top: -100px;
+			}
+
+			&-itm6 {
+				top: -100px;
+			}
+
+			&-itm7 {
+				top: -104px;
+				right: 50px;
+			}
+		}
+	}
+
+	&__card-text {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: linear-gradient(100.6deg, #00609D 42.12%, rgba(34, 169, 255, 0.46) 112.61%);
+		border-radius: 10px;
+		min-height: 70px;
+		min-width: 307px;
+		padding: 5px 30px;
+		font-weight: 500;
+		@include adaptiveValue("font-size", 20, 16);
+		line-height: math.div(24, 20);
+		color: #FFFFFF;
+		margin-bottom: 40px;
+		text-align: center;
+		position: relative;
+		z-index: 2;
 	}
 }
