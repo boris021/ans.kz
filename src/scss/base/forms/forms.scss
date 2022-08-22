@@ -1,19 +1,25 @@
 //<FORM>
 // Снипет (HTML):
 .form {
-	&__row {
-	}
-	&__column {
-	}
-	&__line {
-	}
-	&__input {
-	}
-	&__button {
-	}
+	position: relative;
+
+	&__row {}
+
+	&__column {}
+
+	&__line {}
+
+	&__input {}
+
+	&__button {}
+
 	&__error {
+		margin-top: 10px;
+		font-size: 12px;
+		color: red;
 	}
 }
+
 //</FORM>
 
 // <BUTTONS>
