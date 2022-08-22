@@ -1,12 +1,40 @@
 <!DOCTYPE html>
 <html lang="ru">
-@@include('html/_head.htm',{
-"title":"Комплексное обслуживание домов и зданий в Алматы"
-})
+
+<head>
+	<title>Комплексное обслуживание домов и зданий в Алматы</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20220822154000">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
 <body>
 	<div class="wrapper">
-		@@include('html/_header.htm',{})
+		<header class="header">
+			<div class="header__container">
+				<div class="header__row">
+					<a href="#home" class="header__logo"><img src="img/logo.png" alt="logo"></a>
+					<div class="header__menu menu">
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li class="menu__item"><a href="" class="menu__link">О нас</a></li>
+								<li class="menu__item"><a href="" class="menu__link">Услуги</a></li>
+								<li class="menu__item"><a href="" class="menu__link">Преимущества</a></li>
+								<li class="menu__item"><a href="" class="menu__link">Отзывы</a></li>
+								<li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
+							</ul>
+						</nav>
+					</div>
+					<a data-da=".menu__body, 768, 2" href="tel:+77272547640" class="header__phone _icon-phone">+ 7 (727)
+						254-76-40</a>
+				</div>
+			</div>
+		</header>
 		<main class="page">
 
 			<section class="main">
@@ -18,19 +46,19 @@
 							</div>
 							<div class="main__item">
 								<div class="main__items-card card__items">
-									<div class="card__items-img"><img src="@img/main/item-1.svg" alt="item"></div>
+									<div class="card__items-img"><img src="img/main/item-1.svg" alt="item"></div>
 									<div class="card__items-text">Бесплатная оценка стоимости</div>
 								</div>
 								<div class="main__items-card card__items">
-									<div class="card__items-img"><img src="@img/main/item-2.svg" alt="item"></div>
+									<div class="card__items-img"><img src="img/main/item-2.svg" alt="item"></div>
 									<div class="card__items-text">Оплата по факту выполненной работы</div>
 								</div>
 								<div class="main__items-card card__items">
-									<div class="card__items-img"><img src="@img/main/item-3.svg" alt="item"></div>
+									<div class="card__items-img"><img src="img/main/item-3.svg" alt="item"></div>
 									<div class="card__items-text">Безупречное выполнение всех работ</div>
 								</div>
 								<div class="main__items-card card__items">
-									<div class="card__items-img"><img src="@img/main/item-4.svg" alt="item"></div>
+									<div class="card__items-img"><img src="img/main/item-4.svg" alt="item"></div>
 									<div class="card__items-text">Ответственность за результат</div>
 								</div>
 							</div>
@@ -40,7 +68,7 @@
 					</div>
 				</div>
 				<div>
-					<img class="main__img" src="@img/main/main-bg.png" alt="main">
+					<img class="main__img" src="img/main/main-bg.png" alt="main">
 				</div>
 			</section>
 
@@ -107,31 +135,31 @@
 					<div class="service__row">
 						<div class="service__card">
 							<div class="service__card-text">Услуги инженера КИПиА</div>
-							<img class="service__card-img service__card-img-itm1" src="@img/service/sv1.png" alt="service">
+							<img class="service__card-img service__card-img-itm1" src="img/service/sv1.png" alt="service">
 						</div>
 						<div class="service__card">
 							<div class="service__card-text">Услуги по <br> сантехнической части</div>
-							<img class="service__card-img service__card-img-itm2" src="@img/service/sv2.png" alt="service">
+							<img class="service__card-img service__card-img-itm2" src="img/service/sv2.png" alt="service">
 						</div>
 						<div class="service__card">
 							<div class="service__card-text">Услуги по <br> коммунальной части</div>
-							<img class="service__card-img service__card-img-itm3" src="@img/service/sv3.png" alt="service">
+							<img class="service__card-img service__card-img-itm3" src="img/service/sv3.png" alt="service">
 						</div>
 						<div class="service__card">
 							<div class="service__card-text">Услуги по <br> хозяйственной части</div>
-							<img class="service__card-img service__card-img-itm4" src="@img/service/sv4.png" alt="service">
+							<img class="service__card-img service__card-img-itm4" src="img/service/sv4.png" alt="service">
 						</div>
 						<div class="service__card">
 							<div class="service__card-text">Услуги разнорабочего</div>
-							<img class="service__card-img service__card-img-itm5" src="@img/service/sv5.png" alt="service">
+							<img class="service__card-img service__card-img-itm5" src="img/service/sv5.png" alt="service">
 						</div>
 						<div class="service__card">
 							<div class="service__card-text">Услуги электрика</div>
-							<img class="service__card-img service__card-img-itm6" src="@img/service/sv6.png" alt="service">
+							<img class="service__card-img service__card-img-itm6" src="img/service/sv6.png" alt="service">
 						</div>
 						<div class="service__card">
 							<div class="service__card-text">Услуги техничек (клининг)</div>
-							<img class="service__card-img service__card-img-itm7" src="@img/service/sv7.png" alt="service">
+							<img class="service__card-img service__card-img-itm7" src="img/service/sv7.png" alt="service">
 						</div>
 					</div>
 				</div>
@@ -142,7 +170,7 @@
 					<div class="claim__row">
 
 						<div class="claim__img">
-							<img src="@img/claim/claim-img.png" alt="claim">
+							<img src="img/claim/claim-img.png" alt="claim">
 						</div>
 
 						<div class="claim__row-column">
@@ -170,13 +198,11 @@
 							<form action="">
 								<div class="claim__forms-group">
 									<label class="claim__forms-label" name="name"> Имя </label>
-									<input autocomplete="on" type="text" name="name" data-error="Ошибка" placeholder=""
-										class="input claim__forms-name">
+									<input autocomplete="on" type="text" name="name" data-error="Ошибка" placeholder="" class="input claim__forms-name">
 								</div>
 								<div class="claim__forms-group">
 									<label class="claim__forms-label"> Телефон </label>
-									<input autocomplete="off" type="tel" name="tel" data-error="Ошибка" placeholder=""
-										class="input claim__forms-tel">
+									<input autocomplete="off" type="tel" name="tel" data-error="Ошибка" placeholder="" class="input claim__forms-tel">
 								</div>
 								<button type="button" class="claim__forms-btn">Оставить заявку</button>
 							</form>
@@ -185,7 +211,7 @@
 					</div>
 				</div>
 				<div class="claim__bg">
-					<img src="@img/claim/claim-bg.png" alt="claim">
+					<img src="img/claim/claim-bg.png" alt="claim">
 				</div>
 			</section>
 
@@ -202,7 +228,7 @@
 							<div class="reason__cards-item item-cards">
 								<div class="item-cards__img"></div>
 								<div class="item-cards__icon">
-									<img src="@img/reason/rs1.svg" alt="reason">
+									<img src="img/reason/rs1.svg" alt="reason">
 								</div>
 								<div class="item-cards__title">Соблюдение оговоренного срока</div>
 								<div class="item-cards__text">Мы ответственно подходим к каждому заказу</div>
@@ -210,7 +236,7 @@
 							<div class="reason__cards-item item-cards">
 								<div class="item-cards__img"></div>
 								<div class="item-cards__icon">
-									<img src="@img/reason/rs2.svg" alt="reason">
+									<img src="img/reason/rs2.svg" alt="reason">
 								</div>
 								<div class="item-cards__title">Использование качественных материалов</div>
 								<div class="item-cards__text">Ремонт, реконструкция, уборка осуществляется при помощи
@@ -219,7 +245,7 @@
 							<div class="reason__cards-item item-cards">
 								<div class="item-cards__img"></div>
 								<div class="item-cards__icon">
-									<img src="@img/reason/rs3.svg" alt="reason">
+									<img src="img/reason/rs3.svg" alt="reason">
 								</div>
 								<div class="item-cards__title">Профессионализм сотрудников</div>
 								<div class="item-cards__text">Мы тщательно отбираем и обучаем исполнителей</div>
@@ -227,7 +253,7 @@
 							<div class="reason__cards-item item-cards">
 								<div class="item-cards__img"></div>
 								<div class="item-cards__icon">
-									<img src="@img/reason/rs4.svg" alt="reason">
+									<img src="img/reason/rs4.svg" alt="reason">
 								</div>
 								<div class="item-cards__title">Финансовая прозрачность</div>
 								<div class="item-cards__text">Прозрачное использование СРЕДСТВ по разрешению и согласованию
@@ -249,19 +275,19 @@
 							<div class="feedback__wrapper swiper-wrapper">
 								<!-- Слайд -->
 								<div class="feedback__slide swiper-slide">
-									<img src="@img/feedback/w01.png" alt="feedback">
+									<img src="img/feedback/w01.png" alt="feedback">
 								</div>
 								<!-- Слайд -->
 								<div class="feedback__slide swiper-slide">
-									<img src="@img/feedback/w01.png" alt="feedback">
+									<img src="img/feedback/w01.png" alt="feedback">
 								</div>
 								<!-- Слайд -->
 								<div class="feedback__slide swiper-slide">
-									<img src="@img/feedback/w01.png" alt="feedback">
+									<img src="img/feedback/w01.png" alt="feedback">
 								</div>
 								<!-- Слайд -->
 								<div class="feedback__slide swiper-slide">
-									<img src="@img/feedback/w01.png" alt="feedback">
+									<img src="img/feedback/w01.png" alt="feedback">
 								</div>
 							</div>
 						</div>
@@ -271,10 +297,47 @@
 			</section>
 
 		</main>
-		@@include('html/_footer.htm',{})
+		<footer class="footer">
+			<div class="footer__container">
+				<div class="footer__row">
+					<div class="footer__content">
+						<div class="footer__content-location">Республика Казахстан, город Алматы
+							микрорайон Таугуль-2, дом 12</div>
+						<div class="footer__content-phone">
+							<a href="tel:+77027511151" class="footer__content-phone-link _icon-phone">+7 (702) 751 11 51</a>
+							<a href="tel:+77470360121" class="footer__content-phone-link _icon-phone">+7 (747) 036 01 21</a>
+						</div>
+						<a href="mailto:alhtoo@mail.ru" class="footer__content-mail _icon-mail">E-mail: alhtoo@mail.ru</a>
+						<div class="footer__content-social">
+							<a href="" class="footer__content-social-link">
+								<img src="img/telephone.svg" alt="">
+							</a>
+							<a href="" class="footer__content-social-link">
+								<img src="img/whatsapp.svg" alt="">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer__maps">
+				<div style="position:relative;overflow:hidden;"><a href="https://yandex.kz/maps/162/almaty/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Алматы</a><a href="https://yandex.kz/maps/162/almaty/house/Y08Yfg9jSkQGQFppfX5xdnhlbQ==/?ll=76.879456%2C43.207884&utm_medium=mapframe&utm_source=maps&z=15.86" style="color:#eee;font-size:12px;position:absolute;top:14px;">Микрорайон Таугуль-2, 12 —
+						Яндекс Карты</a><iframe src="https://yandex.kz/map-widget/v1/-/CCURjGscgB" width="100%" height="415" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+			</div>
+		</footer>
 	</div>
-	@@include('html/_popup.htm',{})
-	@@include('html/_js.htm',{})
+	<!-- 
+<div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">Закрыть</button>
+			<div class="popup__text">
+			</div>
+		</div>
+	</div>
+</div>
+ -->
+
+	<script src="js/app.min.js?_v=20220822154000"></script>
 </body>
 
 </html>

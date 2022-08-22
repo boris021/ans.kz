@@ -298,7 +298,7 @@
 .service {
 	position: relative;
 	@include adaptiveValue("margin-top", 300, 100);
-	@include adaptiveValue("margin-bottom", 120, 40);
+	// @include adaptiveValue("margin-bottom", 60, 40);
 
 	&:after {
 		content: '';
@@ -442,5 +442,457 @@
 		text-align: center;
 		position: relative;
 		z-index: 2;
+	}
+}
+
+// claim ========================================================================================================================================================
+.claim {
+	position: relative;
+	@include adaptiveValue("padding-top", 120, 0);
+	@include adaptiveValue("margin-top", 120, 0);
+	@include adaptiveValue("margin-bottom", 120, 40);
+
+	&__bg {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: -1;
+
+
+		img {
+			width: 100%;
+			height: 100%;
+
+			@media (max-width:$mobile) {
+				object-fit: cover;
+			}
+
+		}
+	}
+
+	&__left {
+		position: relative;
+	}
+
+	&__row {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		flex-wrap: wrap;
+
+		&-column {
+			flex: 0 0 35%;
+
+			@media (max-width:$tablet) {
+				flex: 1 1 100%;
+			}
+		}
+	}
+
+	&__img {
+		position: absolute;
+		width: 479px;
+		height: 753px;
+		bottom: 18px;
+		left: -50px;
+
+		@media (max-width:$tablet) {
+			display: none;
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+
+	}
+
+	&__content {
+		margin-right: 40px;
+	}
+
+	&__content-items {
+		margin-bottom: 25px;
+	}
+
+	&__forms {
+		background: #FFFFFF;
+		border: 1px solid #FFF100;
+		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.33);
+		border-radius: 20px;
+		padding: 60px;
+		margin-top: -100px;
+
+		@media (max-width:$tablet) {
+			margin-top: 20px;
+			width: 100%;
+			padding: 30px;
+		}
+	}
+
+	&__forms-title {
+		font-family: 'Futura Md BT';
+		font-weight: 700;
+		@include adaptiveValue("font-size", 25, 20);
+		line-height: math.div(30, 25);
+		color: #333333;
+		text-align: center;
+		margin-bottom: 15px;
+	}
+
+	&__forms-subtitle {
+		max-width: 280px;
+		font-family: 'Futura Md BT';
+		margin: auto;
+		font-weight: 400;
+		line-height: math.div(18, 15);
+		text-align: center;
+		color: #000000;
+		margin-bottom: 25px;
+	}
+
+	&__forms-group {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 20px;
+	}
+
+	&__forms-label {
+		font-family: 'Montserrat';
+		font-weight: 700;
+		color: #333333;
+		margin-bottom: 7px;
+	}
+
+	&__forms-btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: auto;
+		margin-top: 40px;
+		padding: 25px 57px;
+		background: linear-gradient(102.4deg, #FFDD1C 36.84%, rgba(255, 241, 0, 0.76) 74.32%);
+		box-shadow: 0px 7px 35px rgba(238, 141, 17, 0.54);
+		border-radius: 20px;
+		font-family: 'Futura Md BT';
+		font-weight: 700;
+		@include adaptiveValue("font-size", 17, 14);
+		color: #333333;
+	}
+}
+
+.items {
+
+	&__claim {
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	&__claim-circle {
+		position: relative;
+		min-width: 30px;
+		min-height: 30px;
+		margin-right: 13px;
+
+		&::after {
+			content: '';
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			border: 1px solid #FFDD1C;
+			border-radius: 50%;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			border-radius: 50%;
+			border: 5px solid #00609D;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	&__claim-tetx {
+		text-align: left;
+		font-weight: 600;
+		@include adaptiveValue("font-size", 20, 16);
+		color: #333333;
+	}
+}
+
+.input {
+	border: 1px solid #FFF100;
+	border-radius: 20px;
+	height: rem(53);
+	padding: 0 15px;
+}
+
+// reason ========================================================================================================================================================
+.reason {
+	@include adaptiveValue("margin-top", 96, 40);
+	@include adaptiveValue("margin-bottom", 100, 40);
+
+
+	&__row {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	&__item {
+		width: 15%;
+		position: relative;
+
+		@media (max-width: em(1285)) {
+			width: 100%;
+			text-align: center;
+		}
+
+		&-circle {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 212px;
+			height: 212px;
+			border-radius: 50%;
+			border: 3px dashed #00609D;
+			margin-left: 50px;
+
+			@media (max-width: em(1285)) {
+				left: 50%;
+				transform: translateX(-50%);
+				margin-left: 0;
+			}
+		}
+
+		span {
+			font-family: 'Futura Bold';
+			font-weight: 700;
+			font-size: 200px;
+			color: #FFDD1C;
+			margin-left: 35px;
+			position: relative;
+
+			@media (max-width: em(1285)) {
+				margin-left: 0;
+			}
+		}
+	}
+
+	&__item-title {
+		margin-top: -10px;
+		font-family: 'Futura Bold';
+		font-weight: 700;
+		@include adaptiveValue("font-size", 50, 35);
+		color: #FFDD1C;
+		text-transform: uppercase;
+		position: relative;
+
+		@media (max-width: em(1285)) {
+			margin-top: 20px;
+		}
+	}
+
+	&__item-text {
+		font-family: 'Futura Md BT';
+		font-weight: 400;
+		@include adaptiveValue("font-size", 20, 18);
+		color: #333333;
+
+		@media (max-width: em(1285)) {
+			margin-bottom: 30px;
+		}
+	}
+
+	&__cards {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		width: 78.5%;
+
+		@media (max-width: em(1285)) {
+			width: 100%;
+		}
+	}
+}
+
+.item-cards {
+	position: relative;
+	width: 22%;
+
+	@media (max-width:$tablet) {
+		width: 50%;
+		justify-content: center;
+		margin-bottom: 20px;
+	}
+
+	@media (max-width:$mobile) {
+		width: 100%;
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&__img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		background: linear-gradient(142.15deg, #FFDD1C 15.12%, rgba(255, 221, 28, 0) 94.1%);
+		filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+		@media (max-width:$mobile) {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+
+	&__icon {
+		position: relative;
+		width: 80px;
+		height: 80px;
+
+		@media (max-width:$mobile) {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+
+		img {
+			width: 100%;
+			height: 100%;
+			margin-left: -20px;
+			margin-top: 20px;
+		}
+	}
+
+	&__title {
+		margin-top: 40px;
+		display: block;
+		position: relative;
+		font-family: 'Futura Md BT';
+		font-weight: 700;
+		@include adaptiveValue("font-size", 20, 18);
+		color: #333333;
+		margin-bottom: 10px;
+
+		@media (max-width:$mobile) {
+			text-align: center;
+		}
+	}
+
+	&__text {
+		font-family: 'Futura Md BT';
+		font-weight: 400;
+		line-height: math.div(18, 15);
+		color: #333333;
+
+		@media (max-width:$mobile) {
+			text-align: center;
+		}
+	}
+}
+
+// feedback ========================================================================================================================================================
+.feedback {
+	position: relative;
+	@include adaptiveValue("padding-bottom", 100, 40);
+
+	&:after {
+		content: '';
+		position: absolute;
+		width: 245px;
+		height: 100%;
+		top: -30%;
+		left: 0;
+		background: url(../img/feedback/feedback-bg.png) no-repeat;
+
+		@media (max-width:$tablet) {
+			display: none;
+		}
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		width: 658px;
+		height: 100%;
+		top: -350px;
+		right: 0;
+		background: url(../img/feedback/feedback-img.png) top right no-repeat;
+
+		@media (max-width:$tablet) {
+			display: none;
+		}
+	}
+
+	&__title {
+		font-weight: 700;
+		@include adaptiveValue("font-size", 30, 26);
+		text-align: left;
+		@include adaptiveValue("margin-bottom", 70, 20);
+
+		span {
+			color: rgba(8, 155, 241, 1);
+		}
+	}
+
+	&__body {
+		position: relative;
+		gap: 30px;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		z-index: 2;
+
+		@media (max-width:$mobile) {
+			justify-content: center;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			width: 300%;
+			height: 324px;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 150px;
+			background: rgba(0, 96, 157, 0.82);
+			box-shadow: inset 0px 4px 30px rgba(255, 255, 255, 0.53);
+			backdrop-filter: blur(46px);
+			border-radius: 162px 0px 0px 162px;
+			z-index: -1;
+		}
+	}
+
+	&__slide {
+		justify-content: center;
+	}
+}
+
+.swiper-backface-hidden .swiper-slide {
+	text-align: center;
+}
+
+.swiper-slide {
+
+	img {
+		width: 274px;
+		max-height: 552px;
 	}
 }
