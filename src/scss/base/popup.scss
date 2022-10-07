@@ -11,9 +11,11 @@ body::after {
 	pointer-events: none;
 	z-index: 149;
 }
+
 .popup-show body::after {
 	opacity: 1;
 }
+
 .popup {
 	position: fixed;
 	top: 0;
@@ -25,16 +27,19 @@ body::after {
 	visibility: hidden;
 	pointer-events: none;
 }
+
 .popup_show {
 	z-index: 150;
 	visibility: visible;
 	overflow: auto;
 	pointer-events: auto;
 }
+
 .popup_show .popup__content {
 	visibility: visible;
 	transform: scale(1);
 }
+
 .popup__wrapper {
 	display: flex;
 	flex-direction: column;
@@ -46,6 +51,7 @@ body::after {
 	justify-content: center;
 	align-items: center;
 }
+
 .popup__content {
 	visibility: hidden;
 	transform: scale(0);
@@ -53,9 +59,54 @@ body::after {
 	background-color: #eee;
 	padding: 20px;
 	width: 100%;
-	max-width: 900px;
+	max-width: 600px;
 	border-radius: 20px;
+
 	.lock & {
 		visibility: visible;
+		text-align: center;
+	}
+}
+
+.popup__text {
+	font-size: 36px;
+	font-weight: 600;
+	margin-bottom: 15px;
+}
+
+.popup__subtext {
+	font-size: 20px;
+	font-weight: 500;
+	margin-bottom: 25px;
+	line-height: 130%;
+}
+
+.popup__close-btn {
+	padding: 12px 35px;
+	background: #FFDD1C;
+	box-shadow: 0px 7px 35px rgb(238 141 17 / 54%);
+	border-radius: 20px;
+	font-family: "Futura Md BT";
+	font-weight: 700;
+	color: #333333;
+	font-size: 20px;
+}
+
+
+@media (max-width: 428px) {
+	.lock .popup__content {
+		padding: 20px;
+	}
+
+	.popup__text {
+		font-size: 26px;
+	}
+
+	.popup__subtext {
+		font-size: 16px;
+	}
+
+	.popup__close-btn {
+		font-size: 16px;
 	}
 }
